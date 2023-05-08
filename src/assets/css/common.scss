@@ -1,0 +1,67 @@
+@import "./variable";
+
+* {
+  font-family: 'Open Sans', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.boxContainer {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+
+  .boxTitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #544949;
+  }
+
+  .field-label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544949;
+  }
+}
+
+.hideArrow {
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.colorSvg { 
+  font-size: 16px !important;
+  color: #fff;
+  stroke: #fff;
+}
+
+//--- Scroll Bar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #eaeaea;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d6e70;
+}

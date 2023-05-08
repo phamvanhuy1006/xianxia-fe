@@ -1,0 +1,113 @@
+@import 'src/assets/css/_variable.scss';
+
+.loadingIcon {
+  span {
+    width: 12px !important;
+    height: 12px !important;
+
+    svg {
+      color: rgba(0, 0, 0, 0.26) !important;
+    }
+  }
+}
+
+.btn {
+  cursor: pointer !important;
+  border: 0 !important;
+  outline: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 12px !important;
+  text-transform: none !important;
+  height: auto !important;
+
+  &:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15) !important;
+    filter: brightness(1.05);
+  }
+
+  svg {
+    margin-right: -4px;
+    width: 14px;
+    height: 14px;
+  }
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    cursor: not-allowed;
+  }
+
+  &.light {
+    background: $button-light;
+    color: $text;
+
+    &:hover {
+      background: $button-light;
+    }
+  }
+
+  &.info {
+    background: $button-info;
+    color: $white;
+
+    &:hover {
+      background: $button-info;
+    }
+  }
+
+  &.success {
+    background: $button-success;
+    color: $white;
+
+    &:hover {
+      background: $button-success;
+    }
+  }
+
+  &.yellow {
+    background-color: $yellow !important;
+    color: $text !important;
+  }
+
+  &.white {
+    background-color: $white !important;
+    color: $text !important;
+    border: 1px solid $gray !important;
+  }
+
+  &.danger {
+    background: $button-danger;
+    color: $white;
+
+    &:hover {
+      background: $button-danger;
+    }
+  }
+
+  &.primary {
+    background: $button-primary;
+    color: $white;
+
+    &:hover {
+      background: $button-primary;
+    }
+  }
+
+  &.edit-btn {
+    color: #3C8A2E;
+    background-color: $white;
+
+    &:hover {
+      background: $white;
+    }
+  }
+
+  &.warning {
+    background: #F2D03B !important;
+    color: $white;
+
+    &:hover {
+      background: #F2D03B;
+    }
+  }
+}

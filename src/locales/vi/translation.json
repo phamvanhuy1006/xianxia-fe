@@ -1,0 +1,30 @@
+{
+    "common": {
+      "cancel": "Hủy bỏ",
+      "confirm": "Xác nhận",
+      "search": "Tìm kiếm",
+      "noDataTable": "Không có dữ liệu hiển thị",
+      "english": "Tiếng Anh",
+      "vietnamese": "Tiếng Việt",
+      "changeLanguage": "Thay đổi ngôn ngữ",
+      "email": "Email",
+      "status": "Trạng thái",
+      "order": "Đơn hàng",
+      "filterBy": "Lọc theo",
+      "create": "Thêm mới",
+      "reject": "Từ chối",
+      "approve": "Duyệt",
+      "deleteAll": "Xóa tất cả",
+      "createNew": "Tạo",
+      "update": "Cập nhật",
+      "approved": "Đồng ý duyệt",
+      "Pending": "Chờ xử lý",
+      "Completed": "Đã duyệt",
+      "all": "Tất cả",
+      "clear": "Xóa",
+      "deleteUser": "Xóa người dùng"
+    },
+    "errors": {},
+    "success": {}
+  }
+  

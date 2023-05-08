@@ -1,0 +1,30 @@
+{
+    "common": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "search": "Search",
+      "noDataTable": "No data to display",
+      "english": "English",
+      "vietnamese": "Vietnamese",
+      "changeLanguage": "Change Language",
+      "email": "Email",
+      "status": "Status",
+      "order": "Order",
+      "filterBy": "Filter by",
+      "create": "Create",
+      "reject": "Reject",
+      "approve": "Approve",
+      "deleteAll": "Delete all",
+      "createNew": "Create",
+      "update": "Update",
+      "approved": "Approved",
+      "Pending": "Pending",
+      "Completed": "Completed",
+      "all": "All",
+      "clear": "Clear",
+      "deleteUser": "Delete User"
+    },
+    "errors": {},
+    "success": {}
+  }
+  
