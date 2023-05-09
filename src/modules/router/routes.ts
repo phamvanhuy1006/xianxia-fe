@@ -3,6 +3,7 @@ import AuthGuard from "src/components/AuthGuard";
 import GuestGuard from "src/components/GuestGuard";
 import Login from "src/pages/Login";
 import SCREEN_PATHS from "src/shared/constants/screenPaths";
+import generalLayout from "../layout/general";
 import { IRoutesState } from "./route.model";
 
 const routes: IRoutesState[] = [
@@ -12,12 +13,12 @@ const routes: IRoutesState[] = [
     layout: Login,
     component: lazy(() => import("src/pages/Login")),
   },
-//   {
-//     guard: AuthGuard,
-//     path: SCREEN_PATHS.ALL,
-//     layout: generalLayout,
-//     routes: [],
-//   },
+  {
+    guard: AuthGuard,
+    path: SCREEN_PATHS.ALL,
+    layout: generalLayout,
+    routes: [],
+  },
 ];
 
 export default routes;

@@ -7,6 +7,7 @@ import styles from "./login.module.scss";
 import Icons from "src/shared/constants/svgIcons";
 import LabelCustom from "src/components/LabelCustom";
 import ButtonShared from "src/components/ButtonShared";
+import NeonButton from "src/components/NeonButton";
 
 interface LoginJWTProps {
   children?: React.ReactNode;
@@ -152,7 +153,7 @@ const LoginJWT = ({
             />
           </Box>
           <Box className={styles.btnLogin}>
-            <ButtonShared
+            <NeonButton
               onClick={handleSubmit(handleLogin)}
               className={styles.inputLogin}
               type="submit"

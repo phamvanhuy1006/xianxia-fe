@@ -66,7 +66,7 @@ const Login = () => {
     <div>
       <Grid container>
         <Grid item md={7} xs={12} sm={6}>
-          <Box className={styles.imageLogin}>
+          {/* <Box className={styles.imageLogin}>
             <Box className={styles.loginIcon}>
               <Icons.LogoLog />
             </Box>
@@ -76,7 +76,7 @@ const Login = () => {
             <Box className={styles.imageDesignedBy}>
               <Icons.LogoIden />
             </Box>
-          </Box>
+          </Box> */}
         </Grid>
         <Grid item md={5} xs={12} sm={6}>
           <Box className={styles.login}>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 //---Styles
-import styles from './label-custom.module.scss';
+import styles from './styles.module.scss';
 import clsx from 'clsx';
 
 //--- MUI

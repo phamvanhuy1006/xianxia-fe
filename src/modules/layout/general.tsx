@@ -1,6 +1,5 @@
-import { Box, CssBaseline } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
-import React, { useEffect, useState } from "react";
+import { Box, styled, useTheme } from "@mui/material";
+import React, { useState } from "react";
 // import CustomizeAsideLeft from "./aside-left";
 // import CustomizeHeader from "./header";
 
@@ -38,17 +37,17 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-const generalLayout = ({ children }: GeneralLayoutProps) => {
-//   const theme = useTheme();
-//   const [open, setOpen] = useState(true);
+const GeneralLayout = ({ children }: GeneralLayoutProps) => {
+  const theme = useTheme();
+  const [open, setOpen] = useState(true);
 
-//   const handleDrawerOpen = () => {
-//     setOpen(true);
-//   };
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
-//   const handleDrawerClose = () => {
-//     setOpen(false);
-//   };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
   return (
     <Box sx={{ display: "flex" }}>
       {/* <CssBaseline />
@@ -62,13 +61,13 @@ const generalLayout = ({ children }: GeneralLayoutProps) => {
         open={open}
         handleDrawerClose={handleDrawerClose}
         isMobile={false}
-      />
+      /> */}
       <Main open={open}>
         <DrawerHeader />
         <Box>{children}</Box>
-      </Main> */}
+      </Main>
     </Box>
   );
 };
 
-export default generalLayout;
+export default GeneralLayout;

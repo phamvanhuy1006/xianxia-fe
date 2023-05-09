@@ -16,7 +16,7 @@ type ColorType =
   | "warning"
   | "white"
   | "yellow";
-interface ButtonSharedPropsModel {
+export interface ButtonSharedPropsModel {
   className?: string;
   loading?: boolean;
   startIcon?: ReactNode;
@@ -27,9 +27,10 @@ interface ButtonSharedPropsModel {
   color?: ColorType;
   sx?: SxProps<Theme>;
   disabled?: boolean;
+  children?: ReactNode;
 }
 const ButtonShared = (props: ButtonSharedPropsModel) => {
-  const { loading, startIcon, label, sx, color, className, disabled, ...rest } =
+  const { loading, startIcon, label, sx, color, className, disabled, children,...rest } =
     props;
   const btnColor = styles[color || ""] || "";
   return (
@@ -56,6 +57,7 @@ const ButtonShared = (props: ButtonSharedPropsModel) => {
       {...rest}
     >
       {label}
+      {children}
     </LoadingButton>
   );
 };
