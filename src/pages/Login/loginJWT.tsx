@@ -1,30 +1,28 @@
+import { Box } from "@mui/material";
 import { useState } from "react";
-import { Box, Icon } from "@mui/material";
 import { Controller } from "react-hook-form";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import TextFieldCustom from "../../components/TextFieldCustom";
-import styles from "./login.module.scss";
-import Icons from "src/shared/constants/svgIcons";
-import LabelCustom from "src/components/LabelCustom";
 import ButtonShared from "src/components/ButtonShared";
+import LabelCustom from "src/components/LabelCustom";
 import NeonButton from "src/components/NeonButton";
+import TextFieldCustom from "src/components/TextFieldCustom";
+import Icons from "src/shared/constants/svgIcons";
+import { UnknownObj } from "src/shared/models/common.model";
+import styles from "./login.module.scss";
 
 interface LoginJWTProps {
   children?: React.ReactNode;
-  handleSubmit?: any;
-  Styles?: any;
-  control?: any;
-  classes?: any;
-  errors?: any;
-  setValue?: any;
-  setError?: any;
-  handleLogin?: any;
+  handleSubmit?: UnknownObj;
+  Styles?: UnknownObj;
+  control?: UnknownObj;
+  classes?: UnknownObj;
+  setValue?: UnknownObj;
+  setError?: UnknownObj;
+  handleLogin?: UnknownObj;
   isLoading?: boolean;
 }
 
 const LoginJWT = ({
   control,
-  errors,
   handleSubmit,
   handleLogin,
   isLoading,
@@ -60,29 +58,13 @@ const LoginJWT = ({
               }}
               control={control}
               defaultValue=""
-              render={({ field }) => (
+              render={({ field, fieldState: { error } }) => (
                 <TextFieldCustom
                   {...field}
                   disabled={isLoading}
-                  name={field.name}
                   placeholder="Enter your user name"
-                  inputRef={field.ref}
-                  sx={{
-                    "& .MuiInputBase-input": {
-                      background: "#fff",
-                      borderRadius: "10px",
-                      borderBottom: "none",
-                      paddingBottom: "13px",
-                      fontSize: "14px",
-                    },
-                    "& .MuiInputBase-root:before": {
-                      borderBottom: "0px solid rgba(0,0, 0.42)",
-                      content: "none",
-                    },
-                  }}
                   variant="outlined"
-                  helperText={errors?.userName?.message}
-                  error={!!errors?.userName?.message}
+                  helperText={error?.message}
                 />
               )}
             />
@@ -103,41 +85,23 @@ const LoginJWT = ({
               }}
               control={control}
               defaultValue=""
-              render={({ field }) => (
+              render={({ field, fieldState: { error } }) => (
                 <TextFieldCustom
                   {...field}
-                  name={field.name}
                   disabled={isLoading}
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
-                  inputRef={field.ref}
-                  sx={{
-                    "& .MuiInputBase-input": {
-                      background: "#fff",
-                      borderRadius: "10px",
-                      borderBottom: "none",
-                      paddingBottom: "13px",
-                      paddingRight: "0px",
-                      height: "20px",
-                      fontSize: "14px",
-                    },
-                    "& .MuiInputBase-root:before": {
-                      borderBottom: "0px solid rgba(0,0, 0.42)",
-                      content: "none",
-                    },
-                    ".MuiInputBase-root": {
-                      backgroundColor: "#fff",
-                    },
-                  }}
                   InputProps={{
                     endAdornment: (
                       <Box
                         sx={{
                           cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
                         }}
                         onClick={handleClickShowPassword}
                       >
-                        {showPassword ? (
+                        {!showPassword ? (
                           <Icons.EyeIcon />
                         ) : (
                           <Icons.EyeCloseIcon />
@@ -146,14 +110,13 @@ const LoginJWT = ({
                     ),
                   }}
                   variant="outlined"
-                  helperText={errors?.password?.message}
-                  error={!!errors?.password?.message}
+                  helperText={error?.message}
                 />
               )}
             />
           </Box>
           <Box className={styles.btnLogin}>
-            <NeonButton
+            <ButtonShared
               onClick={handleSubmit(handleLogin)}
               className={styles.inputLogin}
               type="submit"

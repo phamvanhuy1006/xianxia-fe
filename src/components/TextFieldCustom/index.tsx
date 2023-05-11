@@ -1,8 +1,9 @@
 import { Box, SxProps, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
-import React, { ReactElement } from "react";
+import React, { forwardRef, ReactElement } from "react";
 import { COLORS } from "src/shared/constants";
+import { UnknownObj } from "src/shared/models/common.model";
 
 type VariantType = "outlined" | "filled" | "standard";
 type TypeType = "password" | "number" | "text" | "tel" | "email";
@@ -11,12 +12,12 @@ export interface TextFieldCustomPropsModel {
   className?: string;
   defaultValue?: string;
   id?: string;
-  value?: any;
+  value?: UnknownObj;
   multiline?: boolean;
   rows?: number;
   minRows?: number;
   maxRows?: number;
-  label?: any;
+  label?: UnknownObj;
   onChange?: (
     parameters: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => void;
@@ -29,54 +30,53 @@ export interface TextFieldCustomPropsModel {
   onKeyDown?: (parameters: React.KeyboardEvent<HTMLDivElement>) => void;
   onInput?: (parameters: React.FormEvent<HTMLDivElement>) => void;
   onClick?: (parameters: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  error?: boolean;
-  errorMessage?: any;
-  inputProps?: any;
+  errorMessage?: UnknownObj;
+  inputProps?: UnknownObj;
   InputProps?: {
-    endAdornment?: any;
-    startAdornment?: any;
+    endAdornment?: UnknownObj;
+    startAdornment?: UnknownObj;
     readOnly?: boolean;
   };
   type?: TypeType;
   variant?: VariantType;
   fullWidth?: boolean;
-  placeholder?: any;
+  placeholder?: UnknownObj;
   disabled?: boolean;
-  name?: string;
-  formProps?: any;
-  SelectProps?: any;
+  formProps?: UnknownObj;
+  SelectProps?: UnknownObj;
   title?: string | null;
   sx?: SxProps;
   autoFocus?: boolean;
   autoComplete?: string;
-  endAdornment?: any;
+  endAdornment?: UnknownObj;
   helperText?: string;
-  inputRef?: any;
   isRequired?: boolean;
   sxTitle?: SxProps;
   iconTitle?: ReactElement;
 }
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: UnknownObj) => ({
   textfield: {
     "& .MuiInputBase-root": {
       borderRadius: 12,
-      // width: '90%',
+      backgroundColor: "#fff",
     },
     "& .MuiInputBase-input": {
-      // marginRight: 5,
-      // marginLeft: 5
+      background: "#fff",
+      borderRadius: "10px",
+      borderBottom: "none",
+      paddingBottom: "13px",
+      fontSize: "14px",
     },
-    "& .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input": {
-      minHeight: "30px !important",
+    "& .MuiInputBase-root:before": {
+      borderBottom: "0px solid rgba(0,0, 0.42)",
+      content: "none",
     },
   },
 }));
-const TextFieldCustom = (props: TextFieldCustomPropsModel) => {
+const TextFieldCustom = forwardRef((props: TextFieldCustomPropsModel, ref) => {
   const {
-    error,
     helperText,
     title,
-    inputRef,
     isRequired,
     sxTitle,
     sx,
@@ -107,18 +107,21 @@ const TextFieldCustom = (props: TextFieldCustomPropsModel) => {
         className={clsx(classes.textfield, className)}
         size="small"
         fullWidth
-        error={error}
+        error={!!helperText}
         helperText={helperText}
         inputProps={{
           autoComplete: "new-password",
         }}
-        inputRef={inputRef}
-        sx={{ "& fieldset": {
-          borderColor: COLORS.BORDER
-        }, ...sx }}
+        inputRef={ref}
+        sx={{
+          "& fieldset": {
+            borderColor: COLORS.BORDER,
+          },
+          ...sx,
+        }}
         {...rest}
       />
     </>
   );
-};
+});
 export default TextFieldCustom;

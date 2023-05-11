@@ -21,7 +21,11 @@ const Login = () => {
     setValue,
     setError,
     setFocus,
-  } = useForm({ defaultValues: { email: "", password: "" }, mode: "onBlur" });
+  } = useForm({
+    defaultValues: { email: "", password: "" },
+    mode: "onChange",
+    reValidateMode: "onChange",
+  });
 
   const [loginApi, { isLoading }] = useLoginMutation();
 
