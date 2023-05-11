@@ -27,11 +27,22 @@ export interface ButtonSharedPropsModel {
   color?: ColorType;
   sx?: SxProps<Theme>;
   disabled?: boolean;
+  isNeon?: boolean;
   children?: ReactNode;
 }
 const ButtonShared = (props: ButtonSharedPropsModel) => {
-  const { loading, startIcon, label, sx, color, className, disabled, children,...rest } =
-    props;
+  const {
+    loading,
+    startIcon,
+    label,
+    sx,
+    color,
+    className,
+    isNeon,
+    disabled,
+    children,
+    ...rest
+  } = props;
   const btnColor = styles[color || ""] || "";
   return (
     <LoadingButton
@@ -53,6 +64,7 @@ const ButtonShared = (props: ButtonSharedPropsModel) => {
       className={clsx(styles.btn, className, {
         [styles.disabled]: disabled,
         [btnColor]: !disabled,
+        [`button-submit`]: isNeon,
       })}
       {...rest}
     >

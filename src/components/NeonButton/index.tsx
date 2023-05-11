@@ -4,7 +4,7 @@ import "./styles.scss";
 
 const NeonButton = (props: ButtonSharedPropsModel) => {
   return (
-    <ButtonShared className="button-submit" {...props}>
+    <ButtonShared isNeon {...props}>
       <span></span>
       <span></span>
       <span></span>
